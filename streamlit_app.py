@@ -73,9 +73,9 @@ def main():
         # Predicted vs Actual plot
         fig, ax = plt.subplots()
         sns.scatterplot(x=y_test, y=predictions, ax=ax)
-        ax.set_xlabel('Actual OSATS Scores')
-        ax.set_ylabel('Predicted OSATS Scores')
-        ax.set_title('Predicted vs. Actual OSATS Scores')
+        ax.set_xlabel('Actual Scores')
+        ax.set_ylabel('Predicted Scores')
+        ax.set_title('Predicted vs. Actual Scores')
         ax.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=1)
         st.pyplot(fig)
 
