@@ -70,6 +70,10 @@ def main():
         ax.set_title('Top 10 Feature Importances')
         st.pyplot(fig)
 
+        # Interactive Pie Chart for Top Features using Plotly
+        fig = px.pie(values=top_features, names=top_features.index, title='Top 10 Feature Importances')
+        st.plotly_chart(fig, use_container_width=True)
+
         # Predicted vs Actual plot
         fig, ax = plt.subplots()
         sns.scatterplot(x=y_test, y=predictions, ax=ax)
