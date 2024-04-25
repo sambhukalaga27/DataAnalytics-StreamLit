@@ -11,7 +11,7 @@ from sklearn.pipeline import Pipeline
 import plotly.express as px
 
 def page_with_both_groups():
-    st.title('Data Analysis and Model Training - Total Cohort Data')
+    st.subheader('Data Analysis and Model Training - Total Cohort Data')
 
     uploaded_file = st.file_uploader("Choose a CSV or Excel file", type=['csv', 'xlsx'])
     if uploaded_file is not None:
@@ -85,7 +85,7 @@ def page_with_both_groups():
         st.pyplot(fig)
 
 def page_individual_groups():
-    st.title('Data Analysis and Model Training - Group Based')
+    st.subheader('Data Analysis and Model Training - Group Based')
 
     uploaded_file = st.file_uploader("Choose a CSV or Excel file", type=['csv', 'xlsx'])
     if uploaded_file is not None:
