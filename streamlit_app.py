@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.pipeline import Pipeline
+import plotly.express as px
+
 
 def main():
     st.title('Data Analysis and Model Training')
