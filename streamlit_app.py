@@ -22,17 +22,16 @@ def page_with_both_groups():
 
         # Dropping default features
         dropping_features = [
-            'sessionID', 'sessionDate', 'sessionTime', 'sessionDateTime', 'surgtype', 'Success', 'weekday',
-            'step1Time', 'step2Time', 'step3Time', 'step4Time', 'step5Time', 'step6Time', 'step6Accuracy', 'step5Accuracy',
-            'step1Accuracy', 'step2Accuracy', 'step3Accuracy', 'step4Accuracy', 'minAccuracy', 'meanAccuracy', 'timeOfDay',
-            'sessionDateTime_2', 'step1Accuracy_overall_difficulty', 'step2Accuracy_overall_difficulty',
-            'step3Accuracy_overall_difficulty', 'step4Accuracy_overall_difficulty', 'step5Accuracy_overall_difficulty',
-            'step6Accuracy_overall_difficulty', 'step1Accuracy_pphid_difficulty', 'step2Accuracy_pphid_difficulty',
-            'step3Accuracy_pphid_difficulty', 'step4Accuracy_pphid_difficulty', 'step5Accuracy_pphid_difficulty',
-            'step6Accuracy_pphid_difficulty', 'maxAccuracy', 'StepCompletionRate', 'step1TimeInverse', 'step2TimeInverse',
-            'step3TimeInverse', 'step4TimeInverse', 'step5TimeInverse', 'step6TimeInverse', 'step1WeightedAccuracy',
-            'step2WeightedAccuracy', 'step3WeightedAccuracy', 'step4WeightedAccuracy', 'step5WeightedAccuracy',
-            'step6WeightedAccuracy', 'overallAccuracy'
+            'sessionID', 'pphid', 'RunDate', 'RunTime', 'RunDateTime', 'surgtype','Success', 'weekday', 'timeOfDay',
+            'step1Time','step2Time',"step3Time",'step4Time','step5Time','step6Time',"minAccuracy",
+            'meanAccuracy', 'sessionDateTime_2', 'SubSuccess',"step1Accuracy_overall_difficulty","step2Accuracy_overall_difficulty",
+            "step3Accuracy_overall_difficulty","step4Accuracy_overall_difficulty","step5Accuracy_overall_difficulty",
+            "step6Accuracy_overall_difficulty","step1Accuracy_pphid_difficulty","step2Accuracy_pphid_difficulty",
+            "step3Accuracy_pphid_difficulty","step4Accuracy_pphid_difficulty","step5Accuracy_pphid_difficulty",
+            "step6Accuracy_pphid_difficulty","maxAccuracy","StepCompletionRate","step1TimeInverse","step2TimeInverse",
+            "step3TimeInverse","step4TimeInverse","step5TimeInverse","step6TimeInverse","step1WeightedAccuracy",
+            "step2WeightedAccuracy","step3WeightedAccuracy","step4WeightedAccuracy","step5WeightedAccuracy",
+            "step6WeightedAccuracy","overallAccuracy","stepnum1","stepnum2","stepnum3","stepnum4","stepnum5","stepnum6"
         ]
         data.drop(columns=dropping_features, inplace=True, errors='ignore')
 
@@ -100,17 +99,16 @@ def page_individual_groups():
 
         # Dropping default features
         dropping_features = [
-            'sessionID', 'sessionDate', 'sessionTime', 'sessionDateTime', 'surgtype', 'Success', 'weekday',
-            'step1Time', 'step2Time', 'step3Time', 'step4Time', 'step5Time', 'step6Time', 'step6Accuracy', 'step5Accuracy',
-            'step1Accuracy', 'step2Accuracy', 'step3Accuracy', 'step4Accuracy', 'minAccuracy', 'meanAccuracy', 'timeOfDay',
-            'sessionDateTime_2', 'step1Accuracy_overall_difficulty', 'step2Accuracy_overall_difficulty',
-            'step3Accuracy_overall_difficulty', 'step4Accuracy_overall_difficulty', 'step5Accuracy_overall_difficulty',
-            'step6Accuracy_overall_difficulty', 'step1Accuracy_pphid_difficulty', 'step2Accuracy_pphid_difficulty',
-            'step3Accuracy_pphid_difficulty', 'step4Accuracy_pphid_difficulty', 'step5Accuracy_pphid_difficulty',
-            'step6Accuracy_pphid_difficulty', 'maxAccuracy', 'StepCompletionRate', 'step1TimeInverse', 'step2TimeInverse',
-            'step3TimeInverse', 'step4TimeInverse', 'step5TimeInverse', 'step6TimeInverse', 'step1WeightedAccuracy',
-            'step2WeightedAccuracy', 'step3WeightedAccuracy', 'step4WeightedAccuracy', 'step5WeightedAccuracy',
-            'step6WeightedAccuracy', 'overallAccuracy'
+            'sessionID', 'pphid', 'RunDate', 'RunTime', 'RunDateTime', 'surgtype','Success', 'weekday', 'timeOfDay',
+            'step1Time','step2Time',"step3Time",'step4Time','step5Time','step6Time',"minAccuracy",
+            'meanAccuracy', 'sessionDateTime_2', 'SubSuccess',"step1Accuracy_overall_difficulty","step2Accuracy_overall_difficulty",
+            "step3Accuracy_overall_difficulty","step4Accuracy_overall_difficulty","step5Accuracy_overall_difficulty",
+            "step6Accuracy_overall_difficulty","step1Accuracy_pphid_difficulty","step2Accuracy_pphid_difficulty",
+            "step3Accuracy_pphid_difficulty","step4Accuracy_pphid_difficulty","step5Accuracy_pphid_difficulty",
+            "step6Accuracy_pphid_difficulty","maxAccuracy","StepCompletionRate","step1TimeInverse","step2TimeInverse",
+            "step3TimeInverse","step4TimeInverse","step5TimeInverse","step6TimeInverse","step1WeightedAccuracy",
+            "step2WeightedAccuracy","step3WeightedAccuracy","step4WeightedAccuracy","step5WeightedAccuracy",
+            "step6WeightedAccuracy","overallAccuracy","stepnum1","stepnum2","stepnum3","stepnum4","stepnum5","stepnum6"
         ]
         data.drop(columns=dropping_features, inplace=True, errors='ignore')
 
