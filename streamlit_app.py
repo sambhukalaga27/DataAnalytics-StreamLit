@@ -51,7 +51,7 @@ def display_correlation_and_descriptions(data, features, target_feature):
     corr_values.columns = ['Correlation with Target']
     descriptions = generate_description(corr_values['Correlation with Target'])
     corr_values['Description'] = descriptions
-    st.write("Correlation with Target Feature:")
+    st.write(f"Correlation with Target Feature: {target_feature}")
     st.dataframe(corr_values)
 
 def page_with_both_groups():
