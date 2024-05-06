@@ -29,6 +29,31 @@ def correlation_plot(data, features, target):
     return corr_matrix
 
 
+def generate_description(correlations):
+    descriptions = []
+    for index, value in correlations.items():
+        if value > 0.5:
+            description = f"Strong positive correlation: As {index} increases, the target significantly increases."
+        elif value > 0:
+            description = f"Positive correlation: As {index} increases, the target tends to increase."
+        elif value < -0.5:
+            description = f"Strong negative correlation: As {index} increases, the target significantly decreases."
+        elif value < 0:
+            description = f"Negative correlation: As {index} increases, the target tends to decrease."
+        else:
+            description = f"Weak correlation: {index} has little to no direct effect on the target."
+        descriptions.append(description)
+    return descriptions
+
+def display_correlation_and_descriptions(data, features, target_feature):
+    corr_matrix = correlation_plot(data, features, target_feature)
+    corr_values = corr_matrix[target_feature].drop(target_feature).to_frame()  # Correct extraction of series
+    corr_values.columns = ['Correlation with Target']
+    descriptions = generate_description(corr_values['Correlation with Target'])
+    corr_values['Description'] = descriptions
+    st.write("Correlation with Target Feature:")
+    st.dataframe(corr_values)
+
 def page_with_both_groups():
     st.subheader('Data Analysis and Model Training - Total Cohort Data')
 
@@ -90,14 +115,10 @@ def page_with_both_groups():
         top_features.plot(kind='barh', ax=ax)
         ax.set_title('Top 10 Feature Importances')
         st.pyplot(fig)
-        # Correlation plot
-        corr_matrix = correlation_plot(data, top_feature, target_feature)
 
-        # Display the relevant correlation values in a table
-        corr_target = corr_matrix.loc[[target_feature]][top_feature].T
-        corr_target.columns = ['Correlation with Target']
-        st.write("Correlation with Target Feature:")
-        st.dataframe(corr_target)
+        # Correlation plot
+
+        display_correlation_and_descriptions(data, top_feature, target_feature)
 
 
         # Interactive Pie Chart for Top Features using Plotly
