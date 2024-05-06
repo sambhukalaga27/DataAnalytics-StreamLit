@@ -199,13 +199,7 @@ def page_individual_groups():
         ax.set_title('Top 10 Feature Importances')
         st.pyplot(fig)
 
-        corr_matrix = correlation_plot(data, top_feature, target_feature)
-
-        # Display the relevant correlation values in a table
-        corr_target = corr_matrix.loc[[target_feature]][top_feature].T
-        corr_target.columns = ['Correlation with Target']
-        st.write("Correlation with Target Feature:")
-        st.dataframe(corr_target)
+        display_correlation_and_descriptions(data, top_feature, target_feature)
         
         # Interactive Pie Chart for Top Features using Plotly
         fig = px.pie(values=top_features, names=top_features.index, title='Top 10 Feature Importances')
