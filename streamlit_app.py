@@ -33,13 +33,13 @@ def generate_description(correlations):
     descriptions = []
     for index, value in correlations.items():
         if value > 0.5:
-            description = f"Strong positive correlation: As {index} increases, the target significantly increases."
+            description = f"Strong positive correlation: As target increases, {index} increases."
         elif value > 0:
-            description = f"Positive correlation: As {index} increases, the target tends to increase."
+            description = f"Positive correlation: As target increases, {index} increases."
         elif value < -0.5:
-            description = f"Strong negative correlation: As {index} increases, the target significantly decreases."
+            description = f"Strong negative correlation: As target decreases, {index} increases."
         elif value < 0:
-            description = f"Negative correlation: As {index} increases, the target tends to decrease."
+            description = f"Negative correlation: As target decreases, {index} increases."
         else:
             description = f"Weak correlation: {index} has little to no direct effect on the target."
         descriptions.append(description)
