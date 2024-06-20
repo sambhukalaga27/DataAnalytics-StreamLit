@@ -31,13 +31,13 @@ def generate_description(correlations):
     descriptions = []
     for index, value in correlations.items():
         if value > 0.5:
-            description = f"Strong positive correlation: As target increases, {index} increases."
+            description = f"Strong positive correlation: As {index} increases, the target significantly increases."
         elif value > 0:
-            description = f"Positive correlation: As target increases, {index} increases."
+            description = f"Positive correlation: As {index} increases, the target tends to increase."
         elif value < -0.5:
-            description = f"Strong negative correlation: As target decreases, {index} increases."
+            description = f"Strong negative correlation: As {index} increases, the target significantly decreases."
         elif value < 0:
-            description = f"Negative correlation: As target decreases, {index} increases."
+            description = f"Negative correlation: As {index} increases, the target tends to decrease."
         else:
             description = f"Weak correlation: {index} has little to no direct effect on the target."
         descriptions.append(description)
@@ -56,14 +56,14 @@ def plot_assisted_runs(data, selected_pphid, overall_avg_ratio):
     if selected_pphid != "All":
         data = data[data['pphid'] == selected_pphid]
 
-    data['RunDate'] = pd.to_datetime(data['RunDate'])
-    data_grouped = data.groupby(['RunDate', 'assisted']).size().unstack(fill_value=0)
+    # data['DayN'] = pd.to_datetime(data['DayN'])
+    data_grouped = data.groupby(['DayN', 'assisted']).size().unstack(fill_value=0)
 
     fig, ax = plt.subplots()
     for label in data_grouped.columns:
         ax.plot(data_grouped.index, data_grouped[label], marker='o', linestyle='--', label=f'Assisted={label}')
 
-    ax.set_xlabel('Run Date')
+    ax.set_xlabel('Run Day')
     ax.set_ylabel('Count')
     ax.set_title(f'Assisted vs Unassisted Runs for {selected_pphid}')
     ax.legend()
